@@ -1,0 +1,32 @@
+# Git
+.git/
+.gitignore
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Build artifacts (we build inside Docker)
+target/
+
+# Documentation
+*.md
+docs/
+
+# CI/CD
+.github/
+
+# Kubernetes manifests (not needed in image)
+k8s/
+
+# Grafana configs (not needed in image)
+grafana/
+
+# Local environment
+.env
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
