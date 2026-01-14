@@ -3,8 +3,6 @@ kind: Ingress
 metadata:
   name: sentiment-ingress
   namespace: sentiment-app
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: nginx
   rules:
@@ -12,6 +10,13 @@ spec:
       http:
         paths:
           - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: sentiment-service
+                port:
+                  number: 80
+          - path: /actuator
             pathType: Prefix
             backend:
               service:
